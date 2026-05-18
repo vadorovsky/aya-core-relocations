@@ -1,5 +1,7 @@
 # aya-core-relocations
 
+[![asciicast](https://asciinema.org/a/G08QAt8zod2FxAJ9.svg)](https://asciinema.org/a/G08QAt8zod2FxAJ9)
+
 Example of an eBPF project based on [Aya][aya] that uses
 [BTF CO-RE (Compile Once, Run Everywhere) relocations][btf-core].
 
