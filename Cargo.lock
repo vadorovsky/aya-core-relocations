@@ -32,6 +32,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "aya-btf"
+version = "0.1.0"
+source = "git+https://github.com/vadorovsky/aya-btf#6c8f7808ab6221874ec8a14cd888347fc6e081fb"
+dependencies = [
+ "aya-btf-macros",
+]
+
+[[package]]
+name = "aya-btf-macros"
+version = "0.1.0"
+source = "git+https://github.com/vadorovsky/aya-btf#6c8f7808ab6221874ec8a14cd888347fc6e081fb"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "aya-build"
 version = "0.1.3"
 source = "git+https://github.com/aya-rs/aya#55113f8db78177fbd2f8ea80c34b0feac1c88360"
@@ -70,6 +88,7 @@ dependencies = [
 name = "aya-core-relocations-ebpf"
 version = "0.1.0"
 dependencies = [
+ "aya-btf",
  "aya-core-relocations-common",
  "aya-ebpf",
  "aya-log-ebpf",

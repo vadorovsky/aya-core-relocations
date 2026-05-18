@@ -13,6 +13,7 @@ edition = "2024"
 
 [workspace.dependencies]
 aya = { git = "https://github.com/aya-rs/aya", default-features = false }
+aya-btf = { git = "https://github.com/vadorovsky/aya-btf", default-features = false }
 aya-build = { git = "https://github.com/aya-rs/aya", default-features = false }
 aya-ebpf = { git = "https://github.com/aya-rs/aya", default-features = false }
 aya-log = { git = "https://github.com/aya-rs/aya", default-features = false }

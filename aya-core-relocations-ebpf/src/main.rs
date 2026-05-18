@@ -1,6 +1,7 @@
 #![no_std]
 #![no_main]
 
+use aya_btf::btf;
 use aya_ebpf::{
     Global,
     cty::{c_int, c_uint},
@@ -13,15 +14,11 @@ use aya_log_ebpf::info;
 #[unsafe(no_mangle)]
 static TARGET_TGID: Global<i32> = Global::new(0);
 
-#[repr(transparent)]
-struct Relocatable(core::marker::PhantomData<()>);
-
+#[btf]
 #[repr(C)]
 struct task_struct {
     pid: i32,
     tgid: i32,
-
-    _relocatable: Relocatable,
 }
 
 #[kprobe]
