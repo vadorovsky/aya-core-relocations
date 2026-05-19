@@ -55,7 +55,31 @@ There are two ways of installing it:
 
 #### Binaries (recommended)
 
-TODO
+Download the tarball from the [experimental "release"][release] that matches
+your Rust target triple. The published binaries currently use `*-apple-darwin`
+for macOS and `*-unknown-linux-musl` for Linux.
+
+After downloading, unpack the archive into a directory that is included in your
+`PATH`.
+
+Example:
+
+```sh
+# Linux ARM64
+curl -LO https://github.com/vadorovsky/bpf-linker/releases/download/btf-relocations-0/bpf-linker-aarch64-unknown-linux-musl.tar.gz
+# Linux x86_64
+curl -LO https://github.com/vadorovsky/bpf-linker/releases/download/btf-relocations-0/bpf-linker-x86_64-unknown-linux-musl.tar.gz
+# macOS ARM64
+curl -LO https://github.com/vadorovsky/bpf-linker/releases/download/btf-relocations-0/bpf-linker-aarch64-apple-darwin.tar.gz
+# macOS x86_64
+curl -LO https://github.com/vadorovsky/bpf-linker/releases/download/btf-relocations-0/bpf-linker-x86_64-apple-darwin.tar.gz
+
+mkdir -p "$HOME/.local/bin"
+tar -xpf bpf-linker-*.tar.gz -C "$HOME/.local/bin"
+# Add this line to your shell startup file. If you use a different shell,
+# refer to its documentation for adding directories to PATH.
+export PATH="$HOME/.local/bin:$PATH"
+```
 
 #### Building from source (not recommended)
 
@@ -119,6 +143,7 @@ dual licensed as above, without any additional terms or conditions.
 [aya-btf]: https://github.com/vadorovsky/aya-btf
 [rustup]: https://rustup.rs
 [bpf-linker]: https://github.com/aya-rs/bpf-linker
+[release]: https://github.com/vadorovsky/bpf-linker/releases/tag/btf-relocations-0
 [Apache license]: LICENSE-APACHE
 [MIT license]: LICENSE-MIT
 [GNU General Public License, Version 2]: LICENSE-GPL2
